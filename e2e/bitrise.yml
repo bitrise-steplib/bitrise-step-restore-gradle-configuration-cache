@@ -3,7 +3,7 @@ default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 
 app:
   envs:
-  - CACHE_KEY: gradle-configuration-cache-e2e-test-restore
+  - CACHE_KEY: gradle-configuration-cache-e2e-test
 
 workflows:
   test_config_cache:
