@@ -1,7 +1,7 @@
 title: Restore Gradle configuration cache
 summary: Restores the Gradle configuration cache folder used by Gradle. Uses the Bitrise Build Cache infrastructure.
 description: |
-    This step restores the Gradle configuration cache folder from the Bitrise Build Cache to speed up future builds. 
+    This step restores the Gradle configuration cache folder from the Bitrise Build Cache to speed up future builds.
 
     For more information on how configuration caching works, refer to the [Gradle user guide](https://docs.gradle.org/current/userguide/configuration_cache.html).
 
