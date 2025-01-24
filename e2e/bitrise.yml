@@ -61,17 +61,17 @@ workflows:
         title: Switch working dir to _tmp
         inputs:
         - path: ./_tmp
-    # - git::https://github.com/bitrise-steplib/bitrise-step-save-gradle-configuration-cache.git@main: TODO after both steps have been merged
-    #        title: Save cache
-    #        is_skippable: false
-    #        inputs:
-    #        - verbose: true
-    #        - key_override: $CACHE_KEY
-#    - script:
-#        title: Clean directory
-#        inputs:
-#          - content: |-
-#              #!/bin/bash
-#              set -ex
-#
-#              rm -rf .gradle
+    - git::https://github.com/bitrise-steplib/bitrise-step-save-gradle-configuration-cache.git@main:
+           title: Save cache
+           is_skippable: false
+           inputs:
+           - verbose: true
+           - key_override: $CACHE_KEY
+    - script:
+        title: Clean directory
+        inputs:
+        - content: |-
+            #!/bin/bash
+            set -ex
+
+            rm -rf .gradle
