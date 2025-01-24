@@ -62,11 +62,11 @@ workflows:
         inputs:
         - path: ./_tmp
     - git::https://github.com/bitrise-steplib/bitrise-step-save-gradle-configuration-cache.git@main:
-           title: Save cache
-           is_skippable: false
-           inputs:
-           - verbose: true
-           - key_override: $CACHE_KEY
+        title: Save cache
+        is_skippable: false
+        inputs:
+        - verbose: true
+        - key_override: $CACHE_KEY
     - script:
         title: Clean directory
         inputs:
