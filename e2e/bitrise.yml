@@ -1,9 +1,9 @@
 format_version: "11"
 default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 
-#app:
-#  envs:
-#  - CACHE_KEY: gradle-configuration-cache-e2e-test
+app:
+  envs:
+  - CACHE_KEY: gradle-configuration-cache-e2e-test-$BITRISEIO_STACK_ID
 
 workflows:
   test_config_cache:
@@ -61,14 +61,6 @@ workflows:
         title: Switch working dir to _tmp
         inputs:
         - path: ./_tmp
-    - script:
-        title: Create cache key
-        inputs:
-        - content: |-
-            #!/bin/bash
-            envman add --key CACHE_KEY --value "gradle-configuration-cache-e2e-test-{{.worker.only_with_stack_id}}"
-          opts:
-            is_template: true
     - git::https://github.com/bitrise-steplib/bitrise-step-save-gradle-configuration-cache.git@main:
         title: Save cache
         is_skippable: false
