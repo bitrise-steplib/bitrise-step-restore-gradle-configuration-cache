@@ -14,16 +14,6 @@ workflows:
 
   _run:
     steps:
-    - script:
-        title: Create cache key
-        inputs:
-        - content: |-
-            #!/bin/bash
-            envman add --key CACHE_KEY --value "gradle-configuration-cache-e2e-test-{{.worker.only_with_stack_id}}"
-            
-        opts:
-          is_template: true
-        
     - path::./:
         title: Execute step
         run_if: "true"
@@ -71,6 +61,14 @@ workflows:
         title: Switch working dir to _tmp
         inputs:
         - path: ./_tmp
+    - script:
+        title: Create cache key
+        inputs:
+        - content: |-
+            #!/bin/bash
+            envman add --key CACHE_KEY --value "gradle-configuration-cache-e2e-test-{{.worker.only_with_stack_id}}"
+          opts:
+            is_template: true
     - git::https://github.com/bitrise-steplib/bitrise-step-save-gradle-configuration-cache.git@main:
         title: Save cache
         is_skippable: false
