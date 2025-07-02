@@ -4,9 +4,9 @@ default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 workflows:
   test_config_cache:
     steps:
-    - bundle::setup: {}
-    - bundle::run: {}
-    - bundle::check: {}
+    - bundle::setup: { }
+    - bundle::run: { }
+    - bundle::check: { }
 step_bundles:
   setup:
     steps:
@@ -32,13 +32,13 @@ step_bundles:
         - verbose: true
         - key_override: $CACHE_KEY
     - script:
-       title: Clean directory
-       inputs:
-         - content: |-
-             #!/bin/bash
-             set -ex
+        title: Clean directory
+        inputs:
+        - content: |-
+            #!/bin/bash
+            set -ex
 
-             rm -rf .gradle
+            rm -rf .gradle
   run:
     steps:
     - path::./:
@@ -52,7 +52,7 @@ step_bundles:
     steps:
     - script:
         title: Check config cache folder
-        inputs:  
+        inputs:
         - content: |
             #!/usr/bin/env bash
             set -ex
