@@ -15,8 +15,12 @@ support_url: https://github.com/bitrise-steplib/bitrise-step-restore-gradle-conf
 
 project_type_tags:
 - android
-- react-native
+- cordova
 - flutter
+- ionic
+- java
+- kotlin-multiplatform
+- react-native
 
 type_tags:
 - utility
